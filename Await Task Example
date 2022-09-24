@@ -1,0 +1,36 @@
+ class Program
+    {
+        public static async Task Main()
+        {
+            var downloads = new List<Task<string>>
+            {
+                DownloadSite("https://softuni.bg"),
+                DownloadSite("https://creative.softuni.bg"),
+                DownloadSite("https://digital.softuni.bg")
+            };
+
+            Console.WriteLine("Do some other job....");
+
+            var response =await Task.WhenAll(downloads);
+
+            var fileTask = new List<Task>
+            {
+                File.WriteAllTextAsync("su.bg",response[0]),
+                File.WriteAllTextAsync("Crsu.bg",response[1]),
+                File.WriteAllTextAsync("Digsu.bg",response[2])
+            };
+
+            await Task.WhenAll(fileTask);
+        }
+
+        private static async Task<string> DownloadSite(string url)
+        {
+            var httpClient=new HttpClient();
+
+            var response = await httpClient.GetAsync(url);
+
+            var html = await response.Content.ReadAsStringAsync();
+
+            return html;
+        }
+    }
