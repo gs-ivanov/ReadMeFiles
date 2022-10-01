@@ -1,2 +1,8 @@
  - Hot keys link (copy - Paste to url & Enter)
 https://learn.microsoft.com/en-gb/visualstudio/ide/csharp-developer-productivity?utm_source=VisualStudio&utm_medium=aspnet-getstarted&utm_campaign=VisualStudio&view=vs-2022#:~:text=Some%20extensions%20also,you%20have%20selected
+
+CTRL+Alt +Up/Down arrow  Добавя курсори за многоредово редактиране
+Alt + Лефт клик Добавя курсори за многоредово редактиране
+Box selecting Shift + Alt + LMB
+Ctrl + D to use multi word edit of same words in Windows
+Alt + up/down - move line up // down
